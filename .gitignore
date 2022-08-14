@@ -20,6 +20,8 @@
 
 # RStudio files
 .Rproj.user/
+.Rbuildignore
+NAMESPACE
 
 # produced vignettes
 vignettes/*.html
@@ -47,3 +49,18 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# directories
+**/work/
+man/
+doc/
+
+# Files
+*.Rproj
+*.html
+*.htm
+*.png
+*.PNG
+*.pdf
+*.zip
+Thumbs.db
