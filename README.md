@@ -2,7 +2,7 @@
 ---
 
 ## Concept of the project
-My new project is to give access to user-friendly tools for computing the final 
+My project is to give access to user-friendly tools for computing the final 
 value of an investment project.
 
 ## Shiny App
