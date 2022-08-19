@@ -21,30 +21,29 @@
 #' # Final value of immediate annuities with first capital and yearly expected of
 #' # 10% during 30 years.
 #' get_final_value(
-#' n_per = 30,
-#' v_0 = 5000,
-#' exp_return = 10,
-#' x_yearly = 12000,
-#' immediate = TRUE
+#'   n_per = 30,
+#'   v_0 = 5000,
+#'   exp_return = 10,
+#'   x_yearly = 12000,
+#'   immediate = TRUE
 #' )
 #'
 #' @author [Layal Christine Lettry](mailto:layal.lettry@gmail.com)
 #'
 #' @export
 
-get_final_value <- function(
-    n_per,
-    v_0,
-    exp_return,
-    x_yearly = 0,
-    immediate = TRUE
-){
+get_final_value <- function(n_per,
+                            v_0,
+                            exp_return,
+                            x_yearly = 0,
+                            immediate = TRUE) {
 
   # Simple interest
-  FINAL_VALUE <- tibble(period = 1:n_per,
-                        final_value  = v_0 * (1 + period * (exp_return/100)))
+  FINAL_VALUE <- tibble(
+    period = 1:n_per,
+    final_value = v_0 * (1 + period * (exp_return / 100))
+  )
 
   # Output
   return(FINAL_VALUE)
-
 }
