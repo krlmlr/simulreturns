@@ -41,7 +41,8 @@ get_final_value <- function(n_per,
   # Simple interest
   FINAL_VALUE <- tibble(
     period = 1:n_per,
-    final_value = v_0 * (1 + period * (exp_return / 100))
+    smpl_int_v0 = v_0 * (1 + period * (exp_return / 100)),
+    comp_int_v0 = v_0 * (1 + (exp_return / 100)^period),
   )
 
   # Output
