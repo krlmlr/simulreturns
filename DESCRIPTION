@@ -8,6 +8,8 @@ Description: Compute the final value of an investment project.
         Simulate returns on stock investment. 
         Simple tool for evaluating personal investment perspectives.
 URL: https://github.com/Layalchristine24/simulreturns
+Depends: dplyr, tidyr, tibble, roxygen2, knitr
 Encoding: UTF-8
 LazyData: true
 Author: Layal Christine Lettry [aut, cre]
+RoxygenNote: 7.2.1
