@@ -15,7 +15,7 @@
 #' Otherwise, ordinary annuities (1st annuity on the 31st of December).
 #'
 #' @return
-#' - `FINAL_VALUE`: Investment final value time serie.
+#' - `FINAL_VALUE`: Investment final values time series.
 #'
 #' @examples
 #' # Final value of immediate annuities with first capital and yearly expected of
