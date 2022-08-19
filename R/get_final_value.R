@@ -1,46 +1,67 @@
 #' @title Compute the final value of an investment project.
-#' 
+#'
 #' @description Function computing the final of an investment project.
-#' 
-#' @param n_per Number of periods (years) over which the final value should be 
+#'
+#' @param n_per Number of periods (years) over which the final value should be
 #' calculated.
-#' 
+#'
 #' @param v_0 Initial investment capital.
-#' 
+#'
 #' @param exp_return Average expected return per year (in percent).
-#' 
+#'
 #' @param x_yearly Yearly annuity. Default = 0.
-#' 
-#' @param immediate If TRUE, immediate annuities (1st annuity on the 1st of January). 
+#'
+#' @param immediate If TRUE, immediate annuities (1st annuity on the 1st of January).
 #' Otherwise, ordinary annuities (1st annuity on the 31st of December).
-#' 
+#'
 #' @return
 #' - `FINAL_VALUE`: Investment final value time serie.
-#' 
+#'
 #' @examples
 #' # Final value of immediate annuities with first capital and yearly expected of
 #' # 10% during 30 years.
-#' get_final_value( 
-#' n_per = 30,
-#' v_0 = 5000, 
-#' exp_return = 10, 
-#' x_yearly = 12000, 
-#' immediate = TRUE
+#' get_final_value(
+#'   n_per = 30,
+#'   v_0 = 5000,
+#'   exp_return = 10,
+#'   compound = TRUE,
+#'   x_yearly = 12000,
+#'   immediate = TRUE
 #' )
 #'
 #' @author [Layal Christine Lettry](mailto:layal.lettry@gmail.com)
-#' 
+#'
 #' @export
 
-get_final_value <- function(
-    n_per,
-    v_0,
-    exp_return,
-    x_yearly = 0,
-    immediate = TRUE
-){
-  
-  FINAL_VALUE <- tibble(period = 1:n_per,
-                        final_value  = v_0 * (1 + period * (exp_return/100)))
-    
+get_final_value <- function(n_per,
+                            v_0,
+                            exp_return,
+                            compound,
+                            x_yearly = 0,
+                            immediate = TRUE) {
+
+  # Expected return in percent
+  exp_return_pct <- exp_return / 100
+
+  # Final value
+  FINAL_VALUE <- tibble(
+    period = 1:n_per
+  ) %>%
+    mutate(
+      final_value = case_when(
+        # Simple return, no annuities
+        x_yearly == 0 &
+          compound == FALSE ~ v_0 * (1 + period * exp_return_pct),
+        # Compound return, no annuities
+        x_yearly == 0 &
+          compound == TRUE ~ v_0 * (1 + exp_return_pct)^period,
+        # Simple return, with annuities
+        x_yearly > 0 &
+          compound == FALSE ~ v_0 * (1 + period * exp_return_pct) +
+          x_yearly * ((1 + exp_return_pct)^period - 1) / exp_return_pct
+      )
+    )
+
+  # Output
+  return(FINAL_VALUE)
 }

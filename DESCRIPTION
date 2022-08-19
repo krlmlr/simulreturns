@@ -1,11 +1,18 @@
 Package: simulreturns
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Simulate and compute returns on investment projects
+Version: 0.1.0.9001
+Author@R: person("Layal Christine", "Lettry", email = "layal.lettry@gmail.com")
+Maintainer: Layal Christine Lettry <layal.lettry@gmail.com>
+Description: Compute the final value of an investment project.
+        Simulate returns on stock investment. 
+        Simple tool for evaluating personal investment perspectives.
+URL: https://github.com/Layalchristine24/simulreturns
+Depends: dplyr, tidyr, tibble, roxygen2, knitr
 Encoding: UTF-8
 LazyData: true
+Author: Layal Christine Lettry [aut, cre]
+RoxygenNote: 7.2.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

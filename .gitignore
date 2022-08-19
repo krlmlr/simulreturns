@@ -49,3 +49,4 @@ doc/
 *.zip
 Thumbs.db
 simulreturns.Rproj
+.DS_Store
