@@ -55,9 +55,15 @@ get_final_value <- function(n_per,
         # Compound return, no annuities
         x_yearly == 0 &
           compound == TRUE ~ v_0 * (1 + exp_return_pct)^period,
-        # Simple return, with annuities
+        # Simple return, with ordinary annuities
         x_yearly > 0 &
-          compound == FALSE ~ v_0 * (1 + period * exp_return_pct) +
+          compound == FALSE &
+          immediate == FALSE ~ v_0 * (1 + period * exp_return_pct) +
+          x_yearly * ((1 + exp_return_pct)^period - 1) / exp_return_pct,
+        # Compound return, with ordinary annuities
+        x_yearly > 0 &
+          compound == TRUE &
+          immediate == FALSE ~ v_0 * (1 + exp_return_pct)^period +
           x_yearly * ((1 + exp_return_pct)^period - 1) / exp_return_pct
       )
     )
