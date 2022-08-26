@@ -37,7 +37,6 @@ po/*~
 rsconnect/
 # directories
 **/work/
-man/
 doc/
 # Files
 *.Rproj
