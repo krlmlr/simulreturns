@@ -1,4 +1,5 @@
+#https://krlmlr.github.io/fledge/
 library(fledge)
-fledge::update_news()
-fledge::update_version()
-
+# To assign a new "dev" version number to the R package and update NEWS.md, use
+fledge::bump_version()
+fledge::finalize_version()
