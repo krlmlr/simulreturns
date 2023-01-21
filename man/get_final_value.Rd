@@ -27,7 +27,7 @@ calculated.}
 Otherwise, ordinary annuities (1st annuity on the 31st of December).}
 }
 \value{
-- `FINAL_VALUE`: Investment final value time serie.
+- `FINAL_VALUE`: Investment final value time series.
 }
 \description{
 Function computing the final of an investment project.
