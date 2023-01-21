@@ -14,12 +14,18 @@
 #' @param immediate If TRUE, immediate annuities (1st annuity on the 1st of January).
 #' Otherwise, ordinary annuities (1st annuity on the 31st of December).
 #'
+#' @param compound If TRUE, compound interests. Otherwise, simple interests.
+#'
 #' @return
-#' - `FINAL_VALUE`: Investment final value time serie.
+#' - `FINAL_VALUE`: Investment final value time series.
+#'
+#' @author [Layal Christine Lettry](mailto:layal.lettry@gmail.com)
+#'
+#' @import dplyr
+#'
+#' @export
 #'
 #' @examples
-#' # Final value of immediate annuities with first capital and yearly expected of
-#' # 10% during 30 years.
 #' get_final_value(
 #'   n_per = 30,
 #'   v_0 = 5000,
@@ -28,10 +34,6 @@
 #'   x_yearly = 12000,
 #'   immediate = TRUE
 #' )
-#'
-#' @author [Layal Christine Lettry](mailto:layal.lettry@gmail.com)
-#'
-#' @export
 
 get_final_value <- function(n_per,
                             v_0,
