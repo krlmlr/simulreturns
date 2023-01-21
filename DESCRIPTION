@@ -17,9 +17,4 @@ Suggests:
 Config/testthat/edition: 3
 License: MIT + file LICENSE
 Imports: 
-    dplyr,
-    ggplot2,
-    knitr,
-    roxygen2,
-    tibble,
-    tidyr
+    dplyr

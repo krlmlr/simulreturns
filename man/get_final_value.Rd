@@ -21,6 +21,8 @@ calculated.}
 
 \item{exp_return}{Average expected return per year (in percent).}
 
+\item{compound}{If TRUE, compound interests. Otherwise, simple interests.}
+
 \item{x_yearly}{Yearly annuity. Default = 0.}
 
 \item{immediate}{If TRUE, immediate annuities (1st annuity on the 1st of January).
@@ -33,8 +35,6 @@ Otherwise, ordinary annuities (1st annuity on the 31st of December).}
 Function computing the final of an investment project.
 }
 \examples{
-# Final value of immediate annuities with first capital and yearly expected of
-# 10\% during 30 years.
 get_final_value(
   n_per = 30,
   v_0 = 5000,
@@ -43,7 +43,6 @@ get_final_value(
   x_yearly = 12000,
   immediate = TRUE
 )
-
 }
 \author{
 [Layal Christine Lettry](mailto:layal.lettry@gmail.com)

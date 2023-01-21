@@ -1,4 +1,4 @@
-test_that("multiplication works", {
+test_that("function final value works", {
   expect_equal(get_final_value(
     n_per = 5,
     v_0 = 5000,
