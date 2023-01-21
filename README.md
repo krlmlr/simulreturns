@@ -23,12 +23,11 @@ devtools::install_github("Layalchristine24/simulreturns")
 
 This is a basic example which shows you how to solve compute the final
 value of an investment of 5000 units after 30 periods, with compound
-interests and immediate annuities, assuming an expected return of 10% in
+interest and immediate annuities, assuming an expected return of 10% in
 average and annuities of 12000 units.
 
 ``` r
 library(simulreturns)
-library(ggplot2)
 library(dplyr)
 #> 
 #> Attaching package: 'dplyr'
@@ -39,12 +38,14 @@ library(dplyr)
 #> 
 #>     intersect, setdiff, setequal, union
 
+# Parameters
 .n_per <- 30
 .v_0 <- 5000
 .exp_return <- 10
 .compound <- TRUE
 .x_yearly <- 12000
 .immediate <- TRUE
+
 # Compound return, with immediate annuities
 FINAL_VALUE_CMP_IMM_ANNUITIES <- get_final_value(
   n_per = .n_per,
@@ -54,6 +55,21 @@ FINAL_VALUE_CMP_IMM_ANNUITIES <- get_final_value(
   x_yearly = .x_yearly,
   immediate = .immediate
 )
+FINAL_VALUE_CMP_IMM_ANNUITIES
+#> # A tibble: 30 × 2
+#>    period final_value
+#>     <int>       <dbl>
+#>  1      1      18700.
+#>  2      2      33770.
+#>  3      3      50347.
+#>  4      4      68582.
+#>  5      5      88640.
+#>  6      6     110704.
+#>  7      7     134974.
+#>  8      8     161672.
+#>  9      9     191039.
+#> 10     10     223343.
+#> # … with 20 more rows
 ```
 
 ``` r
@@ -66,8 +82,5 @@ summary(FINAL_VALUE_CMP_IMM_ANNUITIES)
 #>  3rd Qu.:22.75   3rd Qu.:1066859  
 #>  Max.   :30.00   Max.   :2258568
 ```
-
-    #> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-    #> ℹ Please use `linewidth` instead.
 
 <img src="man/figures/README-plot_final_value-1.png" width="100%" />
