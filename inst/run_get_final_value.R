@@ -15,7 +15,7 @@ FINAL_VALUE_SMPL_NOANNUIT <- get_final_value(
 )
 
 # Compound return, no annuities
-FINAL_VALUE_CMP_NOANNUIT <- get_final_value(
+FINAL_VALUE_CMP_NOANNUITIES <- get_final_value(
   n_per = 30,
   v_0 = 5000,
   exp_return = 10,
@@ -25,7 +25,7 @@ FINAL_VALUE_CMP_NOANNUIT <- get_final_value(
 )
 
 # Simple return, with ordinary annuities
-FINAL_VALUE_SMPL_ORD_ANNUIT <- get_final_value(
+FINAL_VALUE_SMPL_ORD_ANNUITIES <- get_final_value(
   n_per = 30,
   v_0 = 5000,
   exp_return = 10,
@@ -35,7 +35,7 @@ FINAL_VALUE_SMPL_ORD_ANNUIT <- get_final_value(
 )
 
 # Compound return, with ordinary annuities
-FINAL_VALUE_CMP_ORD_ANNUIT <- get_final_value(
+FINAL_VALUE_CMP_ORD_ANNUITIES <- get_final_value(
   n_per = 30,
   v_0 = 5000,
   exp_return = 10,
@@ -46,7 +46,7 @@ FINAL_VALUE_CMP_ORD_ANNUIT <- get_final_value(
 
 
 # Simple return, with immediate annuities
-FINAL_VALUE_SMPL_IMM_ANNUIT <- get_final_value(
+FINAL_VALUE_SMPL_IMM_ANNUITIES <- get_final_value(
   n_per = 30,
   v_0 = 5000,
   exp_return = 10,
@@ -56,7 +56,7 @@ FINAL_VALUE_SMPL_IMM_ANNUIT <- get_final_value(
 )
 
 # Compound return, with immediate annuities
-FINAL_VALUE_CMP_IMM_ANNUIT <- get_final_value(
+FINAL_VALUE_CMP_IMM_ANNUITIES <- get_final_value(
   n_per = 30,
   v_0 = 5000,
   exp_return = 10,
