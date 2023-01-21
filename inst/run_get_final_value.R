@@ -2,7 +2,7 @@
 library(simulreturns)
 
 # For local test or development purposes load sources virtually:
-devtools::load_all(".")
+pkgload::load_all()
 
 # Simple return, no annuities
 FINAL_VALUE_SMPL_NOANNUIT <- get_final_value(
