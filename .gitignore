@@ -42,8 +42,6 @@ doc/
 *.Rproj
 *.html
 *.htm
-*.png
-*.PNG
 *.pdf
 *.zip
 Thumbs.db
