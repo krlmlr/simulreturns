@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# simulreturns 0.1.0.9003 (2023-01-22)
+
+- Same as previous version.
+
+
 # simulreturns 0.1.0.9002 (2022-09-02)
 
 - Same as previous version.
